@@ -21,8 +21,8 @@
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #1a5487; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #00adf6; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --heading-color: #0071bd; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #00ADF6; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --alt-heading-color: #d86098;
   --alt-accent-color: #f787bb;
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
@@ -863,57 +863,20 @@ section,
     scroll-margin-top: 60px;
   }
 }
+
 /*--------------------------------------------------------------
 # Global Section Titles
 --------------------------------------------------------------*/
-.section-alt-title {
-  text-align: center;
-  padding-bottom: 60px;
-  position: relative;
-  
+/* Default color for h2 */
+.section-title h2 {
+  color: var(--heading-color);
 }
 
-.section-alt-title h2 {
-  font-size: 32px;
-  font-weight: 500;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  position: relative;
+/* Class to override the color with --alt-accent-color */
+.section-title h2.alt-color {
   color: var(--alt-heading-color);
 }
 
-.section-alt-title h2:before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 160px;
-  height: 1px;
-  background: color-mix(in srgb, var(--default-color), transparent 60%);
-  left: 0;
-  right: 0;
-  bottom: 1px;
-  margin: auto;
-}
-
-.section-alt-title h2::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: var(--alt-accent-color);
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-.section-alt-title p {
-  margin-bottom: 0;
-}
-/*--------------------------------------------------------------
-# Global Section Titles
---------------------------------------------------------------*/
 .section-title {
   text-align: center;
   padding-bottom: 60px;
@@ -926,36 +889,44 @@ section,
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
+  display: inline-block; /* Ensures the width of the bar matches the text */
 }
 
 .section-title h2:before {
   content: "";
   position: absolute;
-  display: block;
-  width: 160px;
-  height: 1px;
-  background: color-mix(in srgb, var(--default-color), transparent 60%);
-  left: 0;
-  right: 0;
-  bottom: 1px;
-  margin: auto;
+  display: none; /* Hide the thin bar */
 }
 
 .section-title h2::after {
   content: "";
   position: absolute;
   display: block;
-  width: 60px;
-  height: 3px;
-  background: var(--accent-color);
+  width: 100%; /* Make the width based on the text size */
+  height: 10px;
+  background: linear-gradient(90deg, var(--accent-color), var(--alt-accent-color), var(--accent-color));
   left: 0;
-  right: 0;
   bottom: 0;
   margin: auto;
+  background-size: 300% 100%; /* Set background size to allow smooth animation */
+  animation: panGradient 3s linear infinite;
 }
 
 .section-title p {
   margin-bottom: 0;
+}
+
+/* Animation for the gradient pan effect */
+@keyframes panGradient {
+  0% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -993,7 +964,7 @@ section,
     height: auto; /* Mantém a proporção original */
     width: 200%; /* Largura maior para cobrir a área */
     z-index: 1;
-    object-position: -170px; /* Ajusta o deslocamento da imagem */
+    object-position: -350px; /* Ajusta o deslocamento da imagem */
   }
 
 }
@@ -1003,12 +974,14 @@ section,
 }
 
 .hero .welcome h2 {
+  color:rgba(0, 0, 0, 0.0);
   margin: 0;
   font-size: 48px;
   font-weight: 700;
 }
 
 .hero .welcome p {
+  color:rgba(0, 0, 0, 0.0);
   font-size: 24px;
   margin: 0;
 }
