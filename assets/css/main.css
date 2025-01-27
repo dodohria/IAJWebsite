@@ -21,6 +21,7 @@
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
+  --lighter-default-color: #949494; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #0071bd; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #00ADF6; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --alt-heading-color: #d86098;
@@ -1174,6 +1175,31 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+.services .service-item .more-text.alt-color-01 {
+  background-color: color-mix(in srgb, var(--alt-accent-color), transparent 25%);
+
+}
+.services .service-item .more-text {
+  color: var(--contrast-color);
+  margin-top: 20px; /* Adjust the value to the desired margin */
+  display: inline-block; /* Ensures the margin applies correctly */
+  background-color: color-mix(in srgb, var(--alt-accent-color), transparent 25%);
+  padding: 6px 30px 8px 30px;
+  border-radius: 50px;
+  transition: all ease-in-out 0.4s;
+}
+
+
+.services .service-item .more-text i {
+  font-size: 14px;
+}
+.services .service-item:hover .more-text.alt-color-01 {
+  color: var(--accent-color);
+}
+.services .service-item:hover .more-text {
+  color: var(--alt-accent-color);
+}
+
 .services .service-item {
   background-color: var(--surface-color);
   text-align: center;
@@ -1183,6 +1209,13 @@ section,
   height: 100%;
 }
 
+.services .service-item .icon.alt-color-02 {
+  background: var(--lighter-default-color);
+
+}.services .service-item .icon.alt-color-01 {
+   background: var(--accent-color);
+
+}
 .services .service-item .icon {
   margin: 0 auto;
   width: 64px;
@@ -1203,6 +1236,16 @@ section,
   transition: ease-in-out 0.3s;
   
 }
+.services .service-item .icon.alt-color-02::before {
+
+  background: color-mix(in srgb, var(--default-color), transparent 80%);
+
+}
+.services .service-item .icon.alt-color-01::before {
+
+  background: color-mix(in srgb, var(--accent-color), transparent 80%);
+
+}
 
 .services .service-item .icon::before {
   position: absolute;
@@ -1215,6 +1258,12 @@ section,
   border-radius: 5px;
   transition: all 0.3s ease-out 0s;
   transform: translateZ(-1px);
+}
+.services .service-item.alt-color-02 h3 {
+  color: var(--lighter-default-color);
+}
+.services .service-item.alt-color-01 h3 {
+  color: var(--heading-color);
 }
 
 .services .service-item h3 {
@@ -1230,7 +1279,14 @@ section,
   margin-bottom: 0;
   
 }
-
+.services .service-item.alt-color-02:hover {
+  background: color-mix(in srgb, var(--default-color), transparent 70%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 90%);
+}
+.services .service-item.alt-color-01:hover {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
 .services .service-item:hover {
   background: var(--alt-accent-color);
   border-color: var(--alt-accent-color);
@@ -1240,6 +1296,12 @@ section,
   background: var(--surface-color);
 }
 
+.services .service-item:hover .icon.alt-color-02 i {
+  color: var(--default-color);
+}
+.services .service-item:hover .icon.alt-color-01 i {
+  color: var(--accent-color);
+}
 .services .service-item:hover .icon i {
   color: var(--alt-accent-color);
 }

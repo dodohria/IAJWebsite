@@ -108,3 +108,29 @@
       </div>
 
     </section><!-- /Stats Section -->
+
+
+
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box" data-aos="zoom-out" data-aos-delay="300">
+                    <i class="bi bi-puzzle"></i>
+                    <h4>Método ABA</h4>
+                    <p>Nossa rede é especializada no tratamento do TEA através do Método ABA.</p>
+                  </div>
+                </div><!-- End Icon Box -->
+
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box" data-aos="zoom-out" data-aos-delay="400">
+                    <i class="bi bi-emoji-smile"></i>
+                    <h4>Terapia Infantil</h4>
+                    <p>Uma equipe completa para suporte total no tratamento do seu filho, incluindo terapia intensiva.</p>
+                  </div>
+                </div><!-- End Icon Box -->
+
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box" data-aos="zoom-out" data-aos-delay="500">
+                    <i class="bi bi-person-fill"></i>
+                    <h4>Terapia Adulto</h4>
+                    <p>Além da psicoterapia, realizamos Avaliações Neuropsicóligicas com resultado rápido e preciso.</p>
+                  </div>
+                </div><!-- End Icon Box -->
