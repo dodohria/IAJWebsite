@@ -90,6 +90,9 @@
   whatsappBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
+    // Evento personalizado enviado para o Clarity
+    clarity("event", "whatsapp_clicked");
+
     // Abre o link do WhatsApp
     window.open(
       "https://api.whatsapp.com/send/?phone=5535991707061&text=Olá! Gostaria de atendimento.",
