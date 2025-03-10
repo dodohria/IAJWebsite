@@ -75,7 +75,7 @@
   }
 
   /**
-   * WhatsApp scroll button com evento Clarity
+   * WhatsApp scroll button (controle de visibilidade apenas)
    */
   let whatsappBtn = document.querySelector(".whatsapp-scroll-btn");
 
@@ -87,16 +87,7 @@
     }
   }
 
-  whatsappBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    // Abre o link do WhatsApp
-    window.open(
-      "https://api.whatsapp.com/send/?phone=5535991707061&text=Olá! Gostaria de atendimento.",
-      "_blank"
-    );
-  });
-
+  // Apenas controla a visibilidade do botão
   window.addEventListener("load", toggleWhatsAppBtn);
   document.addEventListener("scroll", toggleWhatsAppBtn);
 
