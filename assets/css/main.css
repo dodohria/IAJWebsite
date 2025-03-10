@@ -760,6 +760,42 @@ h6 {
 }
 
 /*--------------------------------------------------------------
+# Scroll Whatsapp Button
+--------------------------------------------------------------*/
+.whatsapp-scroll-btn {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 20px;
+  bottom: 20px;
+  z-index: 99999;
+  background-color: #25d366; /* cor oficial do WhatsApp */
+  width: 75px;  /* 50% maior que 50px = 75px */
+  height: 75px; /* ajuste proporcional (+50%) */
+  border-radius: 50%; /* redondo */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.4s;
+}
+
+.whatsapp-scroll-btn i {
+  font-size: 40px; /* +50% (de 28px original para ~42px arredondado) */
+  color: #ffffff;
+  line-height: 0;
+}
+
+.whatsapp-scroll-btn:hover {
+  background-color: #1ebe57; /* hover mais escuro */
+}
+
+.whatsapp-scroll-btn.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+/*--------------------------------------------------------------
 # Scroll Top Button
 --------------------------------------------------------------*/
 .scroll-top {
