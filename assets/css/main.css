@@ -12,18 +12,20 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Poppins",  sans-serif;
-  --nav-font: "Raleway",  sans-serif;
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Poppins", sans-serif;
+  --nav-font: "Raleway", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+:root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --lighter-default-color: #949494; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #0071bd; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #00ADF6; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #00adf6; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --alt-heading-color: #d86098;
   --alt-accent-color: #f787bb;
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
@@ -32,7 +34,7 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #2c4964;  /* The default color of the main navmenu links */
+  --nav-color: #2c4964; /* The default color of the main navmenu links */
   --nav-hover-color: #1977cc; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
@@ -95,7 +97,10 @@ h6 {
 .pulsating-play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
+  background: radial-gradient(
+    var(--accent-color) 50%,
+    color-mix(in srgb, var(--accent-color), transparent 75%) 52%
+  );
   border-radius: 50%;
   display: block;
   position: relative;
@@ -231,6 +236,15 @@ h6 {
   background-color: var(--background-color);
 }
 
+.header .toptitle {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  height: 40px;
+  padding: 0;
+  font-size: 22px;
+  transition: all 0.5s;
+}
+
 .header .topbar {
   background-color: var(--accent-color);
   height: 40px;
@@ -251,7 +265,6 @@ h6 {
 }
 
 @media (max-width: 575px) {
-
   .header .topbar .contact-info i a,
   .header .topbar .contact-info i span {
     font-size: 13px;
@@ -364,12 +377,12 @@ h6 {
     position: relative;
   }
 
-  .navmenu>ul>li {
+  .navmenu > ul > li {
     white-space: nowrap;
     padding: 15px 14px;
   }
 
-  .navmenu>ul>li:last-child {
+  .navmenu > ul > li:last-child {
     padding-right: 0;
   }
 
@@ -396,7 +409,7 @@ h6 {
     transition: 0.3s;
   }
 
-  .navmenu>ul>li>a:before {
+  .navmenu > ul > li > a:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -410,13 +423,13 @@ h6 {
   }
 
   .navmenu a:hover:before,
-  .navmenu li:hover>a:before,
+  .navmenu li:hover > a:before,
   .navmenu .active:before {
     visibility: visible;
     width: 100%;
   }
 
-  .navmenu li:hover>a,
+  .navmenu li:hover > a,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
@@ -455,11 +468,11 @@ h6 {
 
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover>a {
+  .navmenu .dropdown ul li:hover > a {
     color: var(--nav-dropdown-hover-color);
   }
 
-  .navmenu .dropdown:hover>ul {
+  .navmenu .dropdown:hover > ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -471,7 +484,7 @@ h6 {
     visibility: hidden;
   }
 
-  .navmenu .dropdown .dropdown:hover>ul {
+  .navmenu .dropdown .dropdown:hover > ul {
     opacity: 1;
     top: 0;
     left: -100%;
@@ -573,7 +586,7 @@ h6 {
     background-color: rgba(33, 37, 41, 0.1);
   }
 
-  .navmenu .dropdown>.dropdown-active {
+  .navmenu .dropdown > .dropdown-active {
     display: block;
     background-color: rgba(33, 37, 41, 0.03);
   }
@@ -600,7 +613,7 @@ h6 {
     transition: 0.3s;
   }
 
-  .mobile-nav-active .navmenu>ul {
+  .mobile-nav-active .navmenu > ul {
     display: block;
   }
 }
@@ -712,7 +725,8 @@ h6 {
 .footer .copyright {
   padding-top: 25px;
   padding-bottom: 25px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .footer .copyright p {
@@ -770,10 +784,10 @@ h6 {
   bottom: 20px;
   z-index: 99999;
   background-color: #25d366; /* cor oficial do WhatsApp */
-  width: 75px;  /* 50% maior que 50px = 75px */
+  width: 75px; /* 50% maior que 50px = 75px */
   height: 75px; /* ajuste proporcional (+50%) */
   border-radius: 50%; /* redondo */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.4s;
 }
 
@@ -791,9 +805,6 @@ h6 {
   visibility: visible;
   opacity: 1;
 }
-
-
-
 
 /*--------------------------------------------------------------
 # Scroll Top Button
@@ -870,11 +881,11 @@ h6 {
   font-weight: 600;
 }
 
-.page-title nav ol li+li {
+.page-title nav ol li + li {
   padding-left: 10px;
 }
 
-.page-title nav ol li+li::before {
+.page-title nav ol li + li::before {
   content: "/";
   display: inline-block;
   padding-right: 10px;
@@ -894,7 +905,6 @@ section,
 }
 
 @media (max-width: 1199px) {
-
   section,
   .section {
     scroll-margin-top: 60px;
@@ -941,7 +951,12 @@ section,
   display: block;
   width: 100%; /* Make the width based on the text size */
   height: 10px;
-  background: linear-gradient(90deg, var(--accent-color), var(--alt-accent-color), var(--accent-color));
+  background: linear-gradient(
+    90deg,
+    var(--accent-color),
+    var(--alt-accent-color),
+    var(--accent-color)
+  );
   left: 0;
   bottom: 0;
   margin: auto;
@@ -993,7 +1008,9 @@ section,
 /* Ajuste para dispositivos móveis */
 @media (max-width: 768px) {
   .hero {
-    min-height: calc(100vh - 112px); /* Garante que a seção ocupe a altura total da tela */
+    min-height: calc(
+      100vh - 112px
+    ); /* Garante que a seção ocupe a altura total da tela */
   }
 
   .hero > img {
@@ -1003,7 +1020,6 @@ section,
     z-index: 1;
     object-position: -350px; /* Ajusta o deslocamento da imagem */
   }
-
 }
 
 .hero .container {
@@ -1011,14 +1027,19 @@ section,
 }
 
 .hero .welcome h2 {
-  color:rgba(0, 0, 0, 0.0);
+  color: rgba(0, 0, 0, 0);
   margin: 0;
   font-size: 48px;
   font-weight: 700;
 }
-
+.hero .welcome h1 {
+  color: rgba(0, 0, 0, 0);
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+}
 .hero .welcome p {
-  color:rgba(0, 0, 0, 0.0);
+  color: rgba(0, 0, 0, 0);
   font-size: 24px;
   margin: 0;
 }
@@ -1033,9 +1054,16 @@ section,
   max-width: 64px; /* Ajusta o tamanho do ícone */
   height: auto; /* Mantém a proporção do ícone */
   border: none; /* Remove qualquer borda extra ao redor do ícone */
- 
 }
-
+.hero .content .why-box h1 {
+  font-weight: 600;
+  color: var(--contrast-color);
+  font-size: 24px;
+  overflow: visible; /* Garante que nenhum conteúdo seja cortado */
+  text-align: center; /* Centraliza o título */
+  margin-bottom: 40px; /* Aumenta o espaço entre o ícone e o título */
+  margin-top: 60px; /* Adiciona espaçamento entre o título e o ícone */
+}
 .hero .content .why-box h3 {
   overflow: visible; /* Garante que nenhum conteúdo seja cortado */
   text-align: center; /* Centraliza o título */
@@ -1055,7 +1083,6 @@ section,
   padding: 30px;
   border-radius: 4px;
 }
-
 
 .hero .content .why-box h3 {
   color: var(--contrast-color);
@@ -1086,7 +1113,6 @@ section,
   color: var(--accent-color);
 }
 
-
 .hero .content .icon-box {
   text-align: center;
   border-radius: 10px;
@@ -1112,8 +1138,6 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
-
-
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
@@ -1121,7 +1145,6 @@ section,
   font-size: 2rem;
   font-weight: 700;
   color: var(--heading-color);
-  
 }
 
 .about .content ul {
@@ -1212,19 +1235,25 @@ section,
 # Services Section
 --------------------------------------------------------------*/
 .services .service-item .more-text.alt-color-01 {
-  background-color: color-mix(in srgb, var(--alt-accent-color), transparent 25%);
-
+  background-color: color-mix(
+    in srgb,
+    var(--alt-accent-color),
+    transparent 25%
+  );
 }
 .services .service-item .more-text {
   color: var(--contrast-color);
   margin-top: 20px; /* Adjust the value to the desired margin */
   display: inline-block; /* Ensures the margin applies correctly */
-  background-color: color-mix(in srgb, var(--alt-accent-color), transparent 25%);
+  background-color: color-mix(
+    in srgb,
+    var(--alt-accent-color),
+    transparent 25%
+  );
   padding: 6px 30px 8px 30px;
   border-radius: 50px;
   transition: all ease-in-out 0.4s;
 }
-
 
 .services .service-item .more-text i {
   font-size: 14px;
@@ -1247,10 +1276,9 @@ section,
 
 .services .service-item .icon.alt-color-02 {
   background: var(--lighter-default-color);
-
-}.services .service-item .icon.alt-color-01 {
-   background: var(--accent-color);
-
+}
+.services .service-item .icon.alt-color-01 {
+  background: var(--accent-color);
 }
 .services .service-item .icon {
   margin: 0 auto;
@@ -1270,17 +1298,12 @@ section,
   color: var(--contrast-color);
   font-size: 28px;
   transition: ease-in-out 0.3s;
-  
 }
 .services .service-item .icon.alt-color-02::before {
-
   background: color-mix(in srgb, var(--default-color), transparent 80%);
-
 }
 .services .service-item .icon.alt-color-01::before {
-
   background: color-mix(in srgb, var(--accent-color), transparent 80%);
-
 }
 
 .services .service-item .icon::before {
@@ -1313,7 +1336,6 @@ section,
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
-  
 }
 .services .service-item.alt-color-02:hover {
   background: color-mix(in srgb, var(--default-color), transparent 70%);
@@ -1395,7 +1417,7 @@ section,
   padding: 10px 12px;
 }
 
-.appointment .php-email-form button[type=submit] {
+.appointment .php-email-form button[type="submit"] {
   background: var(--accent-color);
   border: 0;
   padding: 10px 35px;
@@ -1404,7 +1426,7 @@ section,
   border-radius: 50px;
 }
 
-.appointment .php-email-form button[type=submit]:hover {
+.appointment .php-email-form button[type="submit"]:hover {
   background: color-mix(in srgb, var(--accent-color) 90%, white 15%);
 }
 
@@ -1425,7 +1447,8 @@ section,
   transition: 0.3s;
   color: var(--default-color);
   border-radius: 0;
-  border-right: 2px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-right: 2px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
   font-weight: 600;
   font-size: 15px;
 }
@@ -1592,7 +1615,7 @@ hero (max-width: 468px) {
   color: var(--contrast-color);
 }
 
-.doctors .team-member .social a+a {
+.doctors .team-member .social a + a {
   margin-left: 8px;
 }
 
@@ -1786,7 +1809,6 @@ hero (max-width: 468px) {
 }
 
 @media (max-width: 767px) {
-
   .testimonials .testimonials-carousel,
   .testimonials .testimonials-slider {
     overflow: hidden;
@@ -1817,7 +1839,7 @@ hero (max-width: 468px) {
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
-.contact .info-item+.info-item {
+.contact .info-item + .info-item {
   margin-top: 40px;
 }
 
@@ -1853,31 +1875,35 @@ hero (max-width: 468px) {
   height: 100%;
 }
 
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
+.contact .php-email-form input[type="text"],
+.contact .php-email-form input[type="email"],
 .contact .php-email-form textarea {
   font-size: 14px;
   padding: 10px 15px;
   box-shadow: none;
   border-radius: 0;
   color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  background-color: color-mix(
+    in srgb,
+    var(--background-color),
+    transparent 50%
+  );
   border-color: color-mix(in srgb, var(--alt-default-color), transparent 80%);
 }
 
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form input[type="text"]:focus,
+.contact .php-email-form input[type="email"]:focus,
 .contact .php-email-form textarea:focus {
   border-color: var(--alt-accent-color);
 }
 
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form input[type="text"]::placeholder,
+.contact .php-email-form input[type="email"]::placeholder,
 .contact .php-email-form textarea::placeholder {
   color: color-mix(in srgb, var(--alt-default-color), transparent 70%);
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type="submit"] {
   color: var(--contrast-color);
   background: var(--alt-accent-color);
   border: 0;
@@ -1886,10 +1912,9 @@ hero (max-width: 468px) {
   border-radius: 50px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type="submit"]:hover {
   background: color-mix(in srgb, var(--alt-accent-color), transparent 20%);
 }
-
 
 /*--------------------------------------------------------------
 # Starter Section Section
@@ -1981,7 +2006,7 @@ hero (max-width: 468px) {
     flex: 1 1 100%; /* Cada item ocupa 100% da largura no mobile */
     max-width: 100%; /* Remove limite de largura */
     padding: 0;
-    margin:0;
-    border:  0;
+    margin: 0;
+    border: 0;
   }
 }
