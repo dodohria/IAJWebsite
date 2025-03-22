@@ -15,7 +15,7 @@
   --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Poppins", sans-serif;
+  --heading-font: "Montserrat", sans-serif;
   --nav-font: "Raleway", sans-serif;
 }
 
@@ -1004,6 +1004,131 @@ section,
   }
 }
 
+/* Classes utilitária personalizada */
+.center-bottom-10 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+}
+/*--------------------------------------------------------------
+# Banner Section
+--------------------------------------------------------------*/
+/* Estrutura básica já definida anteriormente */
+#banner {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.banner-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+.banner-col-left {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+}
+
+.banner-col-right {
+  display: flex;
+  overflow: hidden;
+  align-items: stretch;
+  position: relative;
+}
+
+.banner-col-left img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.banner-col-right img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  display: block;
+}
+
+/* Sobreposição centralizada */
+/* Texto puro sobre a imagem da esquerda */
+.text-overlay {
+  position: absolute;
+  top: 10%; /* você ajusta conforme quiser */
+  left: 10%;
+  z-index: 3;
+  color: #fff; /* ou outro tom para contrastar */
+  text-align: left;
+  max-width: 80%;
+}
+.overlay-content {
+  position: absolute;
+  z-index: 3;
+  width: 90%;
+  max-width: 90%;
+  padding: 20px;
+  border-radius: 12px;
+
+  text-align: center;
+}
+
+/* Formulário */
+.simple-form input,
+.simple-form select {
+  border-radius: 8px;
+}
+
+.cta-btn,
+.cta-btn:focus,
+.cta-btn:hover {
+  box-shadow: none !important;
+}
+.simple-form .cta-btn,
+.simple-form .cta-btn:focus {
+  color: var(--contrast-color);
+  background: var(--alt-accent-color);
+
+  font-size: 18px;
+  padding: 8px 55px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.simple-form .cta-btn:hover,
+.simple-form .cta-btn:focus:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--alt-accent-color), transparent 15%);
+}
+
+
+@media (max-width: 992px) {
+  .banner-row {
+    flex-direction: column;
+  }
+
+  .banner-col-left,
+  .banner-col-right {
+    width: 100%;
+  }
+
+  .banner-col-left img,
+  .banner-col-right img {
+    width: 100%;
+    height: auto;
+  }
+  .text-overlay {
+    top: 5%;
+    left: 5%;
+    max-width: 90%;
+  }
+  .overlay-content {
+    width: 90%;
+    max-width: 90%;
+    padding: 20px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -1214,9 +1339,13 @@ section,
 /*--------------------------------------------------------------
 # Stats Section
 --------------------------------------------------------------*/
-.stats i {
+.stats .alt-color i {
   color: var(--contrast-color);
   background-color: var(--alt-accent-color);
+}
+.stats i {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
   box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
   width: 54px;
   height: 54px;
@@ -1230,6 +1359,7 @@ section,
   z-index: 1;
 }
 
+
 .stats .stats-item {
   background-color: var(--surface-color);
   margin-top: -27px;
@@ -1241,19 +1371,24 @@ section,
   border-radius: 4px;
   z-index: 0;
 }
-
+.stats .stats-item .alt-color p {
+  color: var(--alt-heading-color);
+}
+.stats .stats-item .alt-color span {
+  color: var(--alt-heading-color);
+}
 .stats .stats-item span {
   font-size: 32px;
   display: block;
   margin: 10px 0;
   font-weight: 700;
-  color: var(--alt-heading-color);
+  color: var(--heading-color);
 }
 
 .stats .stats-item p {
   padding: 0;
   margin: 0;
-  font-family: var(--alt-heading-font);
+  font-family: var(--heading-font);
   font-size: 16px;
 }
 
