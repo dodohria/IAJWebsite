@@ -49,6 +49,16 @@
   --surface-color: #ffffff;
 }
 
+.gradient-background {
+  background: linear-gradient(
+    90deg,
+    var(--accent-color),
+    var(--alt-accent-color),
+    var(--accent-color)
+  );
+
+}
+
 .dark-background {
   --background-color: #060606;
   --default-color: #ffffff;
@@ -67,7 +77,7 @@
 --------------------------------------------------------------*/
 body {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: var(--background-color);*/
   font-family: var(--default-font);
 }
 
@@ -235,10 +245,19 @@ h6 {
   z-index: 997;
   background-color: var(--background-color);
 }
+.header .wave-divider {
+  position: inherit;
+  height: 00px; /* posiciona a onda ao final do header */
+  left: 0;
+  width: 100%;
+  background-color: transparent; /* Usa a mesma cor do header */
+  pointer-events: none; /* permite cliques passarem */
+  z-index: 10;
+}
 
 .header .toptitle {
   background-color: var(--accent-color);
-  color: var(--contrast-color);
+  color: var(--alt-accent-color);
   height: 40px;
   padding: 0;
   font-size: 22px;
@@ -250,6 +269,8 @@ h6 {
   height: 40px;
   padding: 0;
   font-size: 14px;
+  position: relative; /* Importante para posicionar a pseudo-elemento */
+  overflow: visible;
   transition: all 0.5s;
 }
 
@@ -267,7 +288,7 @@ h6 {
 @media (max-width: 575px) {
   .header .topbar .contact-info i a,
   .header .topbar .contact-info i span {
-    font-size: 13px;
+    font-size: 12.5px;
   }
 }
 
@@ -503,6 +524,8 @@ h6 {
     transition: color 0.3s;
   }
 
+  .header .wave-divider {
+  }
   .navmenu {
     padding: 0;
     z-index: 9997;
@@ -576,7 +599,7 @@ h6 {
     position: static;
     display: none;
     z-index: 99;
-    padding: 10px 0;
+    padding: 0px 0;
     margin: 10px 20px;
     background-color: var(--nav-dropdown-background-color);
     transition: all 0.5s ease-in-out;
@@ -1146,6 +1169,9 @@ section,
   font-weight: 700;
   color: var(--heading-color);
 }
+.about .img-fluid{
+  border-radius:15px;
+}
 
 .about .content ul {
   list-style: none;
@@ -1705,6 +1731,14 @@ hero (max-width: 468px) {
   transform: rotate(90deg);
   color: var(--accent-color);
 }
+/*--------------------------------------------------------------
+# Carousel Section
+--------------------------------------------------------------*/
+
+.carousel-caption .h1{
+  color: var(--contrast-color) !important; 
+}
+
 
 /*--------------------------------------------------------------
 # Testimonials Section
